@@ -1,0 +1,19 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
+header {
+  background-color: ;white
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.siteTitle {
+  font-size: 100px;
+  font-weight: 100;
+  margin: 0 0 0 20px;
+  padding-top: 30px;
+}
+
+
