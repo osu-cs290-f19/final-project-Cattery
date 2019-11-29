@@ -3,17 +3,36 @@ a {
   color: #000;
 }
 header {
-  background-color: ;white
+  background-color: #18bc9c;
   display: flex;
   align-items: center;
   position: relative;
 }
 
 .siteTitle {
-  font-size: 100px;
-  font-weight: 100;
-  margin: 0 0 0 20px;
-  padding-top: 30px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 120px;
+  font-weight: 120;
+  margin: 0 0 10px 50px;
+  padding-top: 20px;
 }
 
+.cat-care-container{
+    font-family: 'Amatic SC', cursive;
+    font-size:25px;
+    text-align: center;
+  display: inline-block;
+  min-width: 150px;
+  max-width: 150px;
+  margin: 10px 10px auto 10px;
+  padding: 20px;
+  border-radius: 3px;
+ }
 
+ a:hover{
+    text-decoration: underline;
+ }
+
+ .siteTile a:hover{
+    text-decoration:none;
+ }
