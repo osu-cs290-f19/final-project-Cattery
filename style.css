@@ -36,3 +36,32 @@ header {
  .siteTile a:hover{
     text-decoration:none;
  }
+
+.CatCard {
+  display: inline-block;
+  padding: 15px;
+  border: 2px solid #cccccc;
+  border-radius: 15px;
+}
+
+.CatImageHolder img {
+  max-height: 300px;
+  border-radius: 10px
+}
+
+.CatStatsHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.stat-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.stat-icon {
+  padding: 15px;
+  max-height: 40px;
+}
