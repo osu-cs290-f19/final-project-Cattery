@@ -17,6 +17,10 @@ header {
   padding-top: 20px;
 }
 
+.content {
+    display: flex;
+}
+
 .cat-care-container{
     font-family: 'Amatic SC', cursive;
     font-size:25px;
@@ -42,6 +46,7 @@ header {
   padding: 15px;
   border: 2px solid #cccccc;
   border-radius: 15px;
+  margin: 10px;
 }
 
 .CatImageHolder img {
