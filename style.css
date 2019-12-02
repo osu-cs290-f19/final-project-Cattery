@@ -1,0 +1,72 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
+header {
+  background-color: #18bc9c;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.siteTitle {
+  font-family: 'Amatic SC', cursive;
+  font-size: 120px;
+  font-weight: 120;
+  margin: 0 0 10px 50px;
+  padding-top: 20px;
+}
+
+.content {
+    display: flex;
+}
+
+.cat-care-container{
+    font-family: 'Amatic SC', cursive;
+    font-size:25px;
+    text-align: center;
+  display: inline-block;
+  min-width: 150px;
+  max-width: 150px;
+  margin: 10px 10px auto 10px;
+  padding: 20px;
+  border-radius: 3px;
+ }
+
+ a:hover{
+    text-decoration: underline;
+ }
+
+ .siteTile a:hover{
+    text-decoration:none;
+ }
+
+.CatCard {
+  display: inline-block;
+  padding: 15px;
+  border: 2px solid #cccccc;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.CatImageHolder img {
+  max-height: 300px;
+  border-radius: 10px
+}
+
+.CatStatsHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.stat-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.stat-icon {
+  padding: 15px;
+  max-height: 40px;
+}
