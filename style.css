@@ -70,3 +70,60 @@ header {
   padding: 15px;
   max-height: 40px;
 }
+
+.hidden {
+  display: none;
+}
+
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+#main-modal {
+  width: 350px;
+  height: 150px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1010;
+  background-color: white;
+  padding: 30px;
+}
+
+.modal-header h3 {
+  font-family: 'Amatic SC', sans-sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  position: absolute;
+  left: 50px;
+  top: 10px;
+}
+
+#modal-enter {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.input-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+#text-input {
+    font-size: 25px;
+}
