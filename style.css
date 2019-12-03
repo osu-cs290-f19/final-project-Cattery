@@ -127,3 +127,19 @@ header {
 #text-input {
     font-size: 25px;
 }
+
+.error-container {
+  font-family: 'Amatic SC', serif;
+  text-align: center;
+}
+
+.error-container h2 {
+  font-size: 128px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.error-container h3 {
+  font-size: 32px;
+  margin: 0;
+}
