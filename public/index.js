@@ -8,8 +8,10 @@ function feedCat(which_cat){
 
 function groomCat(which_cat){
   var dirty_cat = document.getElementById("which_cat").getAttribute("data-groom-stat");
+  var total = document.getElementById("which_cat").getAttribute("data-total");
   if(dirty_cat < 2){
   dirty_cat++;
+  total++;
 }
 }
 
