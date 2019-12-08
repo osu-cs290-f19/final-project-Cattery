@@ -19,14 +19,6 @@ function createCatCard(){
   postsSection.insertAdjacentHTML('beforeend',postHTML);
 }
 
-"catName": "",
-"catID": "cat0",
-"color": "0",
-"photoURL": "images/black-kitten.jpg",
-"age": "0",
-"total":"0"
-
-
 function feedCat(which_cat){
   var hungry_cat = document.getElementById("which_cat").getAttribute("data-feed-stat");
   if(hungry_cat < 2){
