@@ -2,7 +2,8 @@
   {
     "catName": "",
     "catID": "cat0",
-    "catNUM": 0,
+    "catPicID": "catPic0",
+    "catNUM": "0",
     "color": "0",
     "photoURL": "images/black-kitten.jpg",
     "age": "0",
