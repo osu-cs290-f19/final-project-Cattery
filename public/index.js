@@ -8,6 +8,8 @@ var images = document.getElementsByClassName('catImg');
 var pP = document.getElementsByClassName("play-stat-text");
 var pG = document.getElementsByClassName("groom-stat-text");
 var pF = document.getElementsByClassName("feed-stat-text");
+var catNames = document.getElementsByClassName("cat-name");
+console.log(catNames);
 
 
 //Ancestor cat
@@ -27,28 +29,55 @@ function addListToCats(){
 }
 }
 
+function nameKitten(){
+  var mainModal = document.getElementById('main-modal');
+  var modalBackdrop = document.getElementById('modal-backdrop');
+  mainModal.classList.remove('hidden');
+  modalBackdrop.classList.remove('hidden');
+}
+/*loads modal on window load*/
+window.onload = nameKitten;
+
+
+var enterButton = document.getElementById("modal-enter");
+enterButton.addEventListener('click', function () {
+  var mainModal = document.getElementById('main-modal');
+  var modalBackdrop = document.getElementById('modal-backdrop');
+  var name = document.getElementById("text-input").value.trim();
+  if (!name) {
+    alert("Don't be heartless, give you kitty a name!");
+  }
+  else {
+    console.log("name is", name);
+        mainModal.classList = 'hidden';
+        modalBackdrop.classList = 'hidden';
+        catNames[cat_tracker].textContent = name;
+        document.getElementById("text-input").value = "";
+
+  }
+});
+
 function createCatCard(){
   cat_tracker++;
   var img_num = Math.floor(Math.random() * 4);
-  console.log(img_num);
-  var imgURL = kittenImgURL[img_num];
-  //var name = modalOpen();
+  var name = nameKitten();
   var catHTML = Handlebars.templates.catCard({
     catID: "cat" + cat_tracker,
     catNUM: cat_tracker,
+    catName: name,
     age: 0,
-    photoURL: imgURL,
+    photoURL: kittenImgURL[img_num],
     color: img_num,
     feedStat: 0,
     groomStat: 0,
     playStat: 0,
     total: 0
   });
-
   var cats = document.getElementById('cats');
   cats.insertAdjacentHTML('beforeend',catHTML);
   addListToCats();
 }
+
 
 var feed = document.getElementById("Feed");
 feed.addEventListener('click',function(){
