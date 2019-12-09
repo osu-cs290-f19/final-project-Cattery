@@ -7,26 +7,28 @@ templates['catCard'] = template({"compiler":[8,">= 4.3.0"],"main":function(conta
     + alias4(((helper = (helper = helpers.catID || (depth0 != null ? depth0.catID : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"catID","hash":{},"data":data,"loc":{"start":{"line":1,"column":28},"end":{"line":1,"column":37}}}) : helper)))
     + "\" data-cat-num =\""
     + alias4(((helper = (helper = helpers.catNUM || (depth0 != null ? depth0.catNUM : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"catNUM","hash":{},"data":data,"loc":{"start":{"line":1,"column":54},"end":{"line":1,"column":64}}}) : helper)))
-    + "\" data-feed-stat="
-    + alias4(((helper = (helper = helpers.feedStat || (depth0 != null ? depth0.feedStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"feedStat","hash":{},"data":data,"loc":{"start":{"line":1,"column":81},"end":{"line":1,"column":93}}}) : helper)))
-    + " data-groom-stat="
-    + alias4(((helper = (helper = helpers.groomStat || (depth0 != null ? depth0.groomStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"groomStat","hash":{},"data":data,"loc":{"start":{"line":1,"column":110},"end":{"line":1,"column":123}}}) : helper)))
-    + " data-play-stat="
-    + alias4(((helper = (helper = helpers.playStat || (depth0 != null ? depth0.playStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"playStat","hash":{},"data":data,"loc":{"start":{"line":1,"column":139},"end":{"line":1,"column":151}}}) : helper)))
-    + " data-total = 0 data-is-adult="
-    + alias4(((helper = (helper = helpers.age || (depth0 != null ? depth0.age : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"age","hash":{},"data":data,"loc":{"start":{"line":1,"column":181},"end":{"line":1,"column":188}}}) : helper)))
-    + " data-color = "
-    + alias4(((helper = (helper = helpers.color || (depth0 != null ? depth0.color : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"color","hash":{},"data":data,"loc":{"start":{"line":1,"column":202},"end":{"line":1,"column":211}}}) : helper)))
-    + ">\n  <div class=\"cat-name-holder\">\n    <h2 class=\"cat-name\">"
+    + "\" data-feed-stat = \""
+    + alias4(((helper = (helper = helpers.feedStat || (depth0 != null ? depth0.feedStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"feedStat","hash":{},"data":data,"loc":{"start":{"line":1,"column":84},"end":{"line":1,"column":96}}}) : helper)))
+    + "\" data-groom-stat= \""
+    + alias4(((helper = (helper = helpers.groomStat || (depth0 != null ? depth0.groomStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"groomStat","hash":{},"data":data,"loc":{"start":{"line":1,"column":116},"end":{"line":1,"column":129}}}) : helper)))
+    + "\" data-play-stat= \""
+    + alias4(((helper = (helper = helpers.playStat || (depth0 != null ? depth0.playStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"playStat","hash":{},"data":data,"loc":{"start":{"line":1,"column":148},"end":{"line":1,"column":160}}}) : helper)))
+    + "\" data-total = \""
+    + alias4(((helper = (helper = helpers.total || (depth0 != null ? depth0.total : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"total","hash":{},"data":data,"loc":{"start":{"line":1,"column":176},"end":{"line":1,"column":185}}}) : helper)))
+    + "\" data-is-adult= \""
+    + alias4(((helper = (helper = helpers.age || (depth0 != null ? depth0.age : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"age","hash":{},"data":data,"loc":{"start":{"line":1,"column":203},"end":{"line":1,"column":210}}}) : helper)))
+    + "\" data-color = \""
+    + alias4(((helper = (helper = helpers.color || (depth0 != null ? depth0.color : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"color","hash":{},"data":data,"loc":{"start":{"line":1,"column":226},"end":{"line":1,"column":235}}}) : helper)))
+    + "\">\n  <div class=\"cat-name-holder\">\n    <h2 class=\"cat-name\">"
     + alias4(((helper = (helper = helpers.catName || (depth0 != null ? depth0.catName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"catName","hash":{},"data":data,"loc":{"start":{"line":3,"column":25},"end":{"line":3,"column":36}}}) : helper)))
     + "</h2>\n  </div>\n  <div class=\"cat-image-holder\">\n    <img class = \"catImg\" src= \""
     + alias4(((helper = (helper = helpers.photoURL || (depth0 != null ? depth0.photoURL : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"photoURL","hash":{},"data":data,"loc":{"start":{"line":6,"column":32},"end":{"line":6,"column":44}}}) : helper)))
-    + "\" alt=\"Cat Image\">\n  </div>\n  <div class=\"cat-stats-holder\">\n    <div class=\"groom-stat stat-holder\">\n      <img src=\"images/brush.jpg\" alt=\"Groom Icon\" class=\"stat-icon\">\n      <p class=\"groom-stat-text\">"
-    + alias4(((helper = (helper = helpers.groomStat || (depth0 != null ? depth0.groomStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"groomStat","hash":{},"data":data,"loc":{"start":{"line":11,"column":33},"end":{"line":11,"column":46}}}) : helper)))
-    + "/2</p>\n    </div>\n    <div class=\"play-stat stat-holder\">\n      <img src=\"images/cat_toy.jpg\" alt=\"Play Icon\" class=\"stat-icon\">\n      <p class=\"play-stat-text\"> "
-    + alias4(((helper = (helper = helpers.playStat || (depth0 != null ? depth0.playStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"playStat","hash":{},"data":data,"loc":{"start":{"line":15,"column":33},"end":{"line":15,"column":45}}}) : helper)))
-    + "/2</p>\n    </div>\n    <div class=\"feed-stat stat-holder\">\n      <img src=\"images/bowl.jpg\" alt=\"Feed Icon\" class=\"stat-icon\">\n      <p class=\"feed-stat-text\"> "
-    + alias4(((helper = (helper = helpers.feedStat || (depth0 != null ? depth0.feedStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"feedStat","hash":{},"data":data,"loc":{"start":{"line":19,"column":33},"end":{"line":19,"column":45}}}) : helper)))
+    + "\" alt=\"Cat Image\">\n  </div>\n  \n  <div class=\"cat-stats-holder\">\n    <div class=\"groom-stat stat-holder\">\n      <img src=\"images/brush.jpg\" alt=\"Groom Icon\" class=\"stat-icon\">\n      <p class=\"groom-stat-text\">"
+    + alias4(((helper = (helper = helpers.groomStat || (depth0 != null ? depth0.groomStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"groomStat","hash":{},"data":data,"loc":{"start":{"line":12,"column":33},"end":{"line":12,"column":46}}}) : helper)))
+    + "/2</p>\n    </div>\n\n    <div class=\"feed-stat stat-holder\">\n      <img src=\"images/bowl.jpg\" alt=\"Feed Icon\" class=\"stat-icon\">\n      <p class=\"feed-stat-text\"> "
+    + alias4(((helper = (helper = helpers.feedStat || (depth0 != null ? depth0.feedStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"feedStat","hash":{},"data":data,"loc":{"start":{"line":17,"column":33},"end":{"line":17,"column":45}}}) : helper)))
+    + "/2</p>\n    </div>\n\n    <div class=\"play-stat stat-holder\">\n      <img src=\"images/cat_toy.jpg\" alt=\"Play Icon\" class=\"stat-icon\">\n      <p class=\"play-stat-text\"> "
+    + alias4(((helper = (helper = helpers.playStat || (depth0 != null ? depth0.playStat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"playStat","hash":{},"data":data,"loc":{"start":{"line":22,"column":33},"end":{"line":22,"column":45}}}) : helper)))
     + "/2</p>\n    </div>\n  </div>\n</div>\n";
 },"useData":true});
 })();
