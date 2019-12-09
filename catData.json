@@ -1,9 +1,15 @@
 [
   {
-    "name": "",
-    "id": "cat0",
-    "color": "black",
-    "photoURL": "/public/images/black-kitten.jpg",
-    "age": "child"
+    "catName": "",
+    "catID": "cat0",
+    "catPicClass": "catPic0",
+    "catNUM": "0",
+    "color": "0",
+    "photoURL": "images/black-kitten.jpg",
+    "age": "0",
+    "feedStat": 0,
+    "groomStat": 0,
+    "playStat": 0,
+    "total": 0
   }
 ]
