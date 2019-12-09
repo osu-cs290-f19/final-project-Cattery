@@ -13,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "handlebars views/partials/catCard.handlebars -f public/catCardTemplate.js",
+    "build": "handlebars -f public/catCardTemplate.js views/partials/catCard.handlebars",
     "prestart": "npm run build"
   },
   "repository": {

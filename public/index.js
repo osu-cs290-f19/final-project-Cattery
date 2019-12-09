@@ -3,11 +3,16 @@ var adultImgURL = ["images/black-adult.jpg", "images/orange-adult.jpg", "images/
 
 var focus_variable = 0;
 var cat_tracker = 0;
+var catList = document.getElementById('cats');
 var catCards = document.getElementsByClassName('cat-card');
 var images = document.getElementsByClassName('catImg');
 var pP = document.getElementsByClassName("play-stat-text");
 var pG = document.getElementsByClassName("groom-stat-text");
 var pF = document.getElementsByClassName("feed-stat-text");
+var nameModal = document.getElementById('main-modal');
+var modalBackdrop = document.getElementById('modal-backdrop');
+var btnEnter = document.getElementsByClassName("enter-button");
+var modalText = document.getElementById('text-input');
 
 
 //Ancestor cat
@@ -26,6 +31,8 @@ function addListToCats(){
 });
 }
 }
+
+
 
 function createCatCard(){
   cat_tracker++;
@@ -51,7 +58,7 @@ function createCatCard(){
 }
 
 var feed = document.getElementById("Feed");
-feed.addEventListener('click',function(){
+feed.addEventListener('click', function(){
   var hungry_cat = document.getElementById("cat" + focus_variable).getAttribute("data-feed-stat");
   var total = document.getElementById("cat" + focus_variable).getAttribute("data-total");
   var age = document.getElementById("cat" + focus_variable).getAttribute("data-is-adult");
@@ -145,3 +152,35 @@ play.addEventListener('click', function(){
 
   }
 });
+
+/*unhides modal to name new kitten*/
+function nameKitten() {
+    nameModal.classList = 'visible';
+    modalBackdrop.classList = 'visible';
+}
+
+/*hide modal and name kitten*/
+function hideModal() {
+
+    modalText.value = "";
+
+    nameModal.classList = 'hidden';
+    modalBackdrop.classList = 'hidden';
+}
+
+/*loads modal on window load*/
+window.onload = nameKitten;
+
+btnEnter.addEventListener('click', hideModal);
+
+
+
+
+
+
+
+
+
+
+
+
