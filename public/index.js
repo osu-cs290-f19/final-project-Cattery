@@ -4,6 +4,8 @@ var adultImgURL = ["images/black-adult.jpg", "images/orange-adult.jpg", "images/
 var focus_variable = 0;
 var cat_tracker = 0;
 var catCards = document.getElementsByClassName('cat-card');
+var images = document.getElementsByClassName('catImg');
+console.log(images);
 
 //Ancestor cat
 catCards[0].addEventListener('click',function(event) {
@@ -62,7 +64,7 @@ feed.addEventListener('click',function(){
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', "1");
     var color = document.getElementById("cat" + focus_variable).getAttribute("color");
-    document.getElementById("cat"+focus_variable).getElementsByTagName("img").src = adultImgURL[color];
+    images[focus_variable].src = adultImgURL[focus_variable];
     alert("All grown up!");
   }
 });
@@ -85,17 +87,16 @@ groom.addEventListener('click',function (){
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
     var color = document.getElementById("cat"+focus_variable).getAttribute("color");
-    document.getElementById("cat"+focus_variable).getElementsByTagName("img").src = adultImgURL[color];
+    images[focus_variable].src = adultImgURL[focus_variable];
     alert("All grown up!");
   }
 });
 
 var play = document.getElementById("Play");
-play.addEventListener('click',function(){
+play.addEventListener('click', function(){
   var bored_cat = document.getElementById("cat"+focus_variable).getAttribute("data-play-stat");
   var total = document.getElementById("cat"+focus_variable).getAttribute("data-total");
   var age = document.getElementById("cat"+focus_variable).getAttribute("data-is-adult");
-
   if(bored_cat < 2){
   bored_cat++;
   document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', bored_cat)
@@ -108,9 +109,9 @@ play.addEventListener('click',function(){
 
   }
   if(total == 6 && age == 0){
-    document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
+    document.getElementById("cat" + focus_variable).setAttribute('data-is-adult', 1);
     var color = document.getElementById("cat"+focus_variable).getAttribute("color");
-    document.getElementById("cat"+focus_variable).getElementsByTagName("img").src = adultImgURL[color];
+    images[focus_variable].src = adultImgURL[focus_variable];
     alert("All grown up!");
   }
 });
