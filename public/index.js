@@ -32,8 +32,6 @@ function addListToCats(){
 }
 }
 
-
-
 function createCatCard(){
   cat_tracker++;
   var img_num = Math.floor(Math.random() * 4);
@@ -161,11 +159,15 @@ function nameKitten() {
 
 /*hide modal and name kitten*/
 function hideModal() {
+    if (!modalText.value.trim()) {
+    alert("You must give your kitten a name!");
+    }
+    else {
+        modalText.value = "";
 
-    modalText.value = "";
-
-    nameModal.classList = 'hidden';
-    modalBackdrop.classList = 'hidden';
+        nameModal.classList = 'hidden';
+        modalBackdrop.classList = 'hidden';
+    }
 }
 
 /*loads modal on window load*/

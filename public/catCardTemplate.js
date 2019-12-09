@@ -19,7 +19,7 @@ templates['catCard'] = template({"compiler":[8,">= 4.3.0"],"main":function(conta
     + alias4(((helper = (helper = helpers.age || (depth0 != null ? depth0.age : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"age","hash":{},"data":data,"loc":{"start":{"line":1,"column":204},"end":{"line":1,"column":211}}}) : helper)))
     + "\" data-color = \""
     + alias4(((helper = (helper = helpers.color || (depth0 != null ? depth0.color : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"color","hash":{},"data":data,"loc":{"start":{"line":1,"column":227},"end":{"line":1,"column":236}}}) : helper)))
-    + "\">\r\n  <div class=\"cat-name-holder\">\r\n    <h2 class=\"cat-name\">"
+    + "\">\n  <div class=\"cat-name-holder\">\r\n    <h2 class=\"cat-name\">"
     + alias4(((helper = (helper = helpers.catName || (depth0 != null ? depth0.catName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"catName","hash":{},"data":data,"loc":{"start":{"line":3,"column":25},"end":{"line":3,"column":36}}}) : helper)))
     + "</h2>\r\n  </div>\r\n  <div class=\"cat-image-holder\">\r\n    <img class = \"catImg\" src= \""
     + alias4(((helper = (helper = helpers.photoURL || (depth0 != null ? depth0.photoURL : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"photoURL","hash":{},"data":data,"loc":{"start":{"line":6,"column":32},"end":{"line":6,"column":44}}}) : helper)))
