@@ -1,10 +1,14 @@
-var kittenImgURL = ["images/black-kitten.jpg", "images/orange-kitten.jpg", "images/siamese-kitten.jpg", "white-kitten.jpg"];
-var adultImgURL = ["images/black-adult.jpg", "images/orange-adult.jpg", "images/siamese-adult.jpg", "white-adult.jpg"];
+var kittenImgURL = ["images/black-kitten.jpg", "images/orange-kitten.jpg", "images/siamese-kitten.jpg", "images/white-kitten.jpg"];
+var adultImgURL = ["images/black-adult.jpg", "images/orange-adult.jpg", "images/siamese-adult.jpg", "images/white-adult.jpg"];
 
 var focus_variable = 0;
 var cat_tracker = 0;
 var catCards = document.getElementsByClassName('cat-card');
 var images = document.getElementsByClassName('catImg');
+var pP = document.getElementsByClassName("play-stat-text");
+var pG = document.getElementsByClassName("groom-stat-text");
+var pF = document.getElementsByClassName("feed-stat-text");
+
 
 //Ancestor cat
 catCards[0].addEventListener('click',function(event) {
@@ -26,6 +30,7 @@ function addListToCats(){
 function createCatCard(){
   cat_tracker++;
   var img_num = Math.floor(Math.random() * 4);
+  console.log(img_num);
   var imgURL = kittenImgURL[img_num];
   //var name = modalOpen();
   var catHTML = Handlebars.templates.catCard({
@@ -55,7 +60,7 @@ feed.addEventListener('click',function(){
   document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', hungry_cat);
   total++;
   document.getElementById("cat"+focus_variable).setAttribute('data-total', total);
-  console.log(total);
+  pF[focus_variable].textContent = hungry_cat + "/2";
 }
   if(total == 6 && age == 1){
     createCatCard();
@@ -65,10 +70,15 @@ feed.addEventListener('click',function(){
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', "1");
     var color = document.getElementById("cat" + focus_variable).getAttribute("data-color");
-    console.log(focus_variable);
-    console.log(color);
     images[focus_variable].src = adultImgURL[color];
     alert("All grown up!");
+    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
+    pF[focus_variable].textContent = "0/2";
+    pG[focus_variable].textContent = "0/2";
+    pP[focus_variable].textContent = "0/2";
   }
 });
 
@@ -82,7 +92,7 @@ groom.addEventListener('click',function (){
   document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat',dirty_cat)
   total++;
   document.getElementById("cat"+focus_variable).setAttribute('data-total', total)
-  console.log(total);
+  pG[focus_variable].textContent = dirty_cat + "/2";
 }
   if(total == 6 && age == 1){
     createCatCard();
@@ -91,9 +101,15 @@ groom.addEventListener('click',function (){
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
     var color = document.getElementById("cat"+focus_variable).getAttribute("data-color");
-    console.log(color);
     images[focus_variable].src = adultImgURL[color];
     alert("All grown up!");
+    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
+    pF[focus_variable].textContent = "0/2";
+    pG[focus_variable].textContent = "0/2";
+    pP[focus_variable].textContent = "0/2";
   }
 });
 
@@ -107,7 +123,7 @@ play.addEventListener('click', function(){
   document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', bored_cat)
   total++;
   document.getElementById("cat"+focus_variable).setAttribute('data-total',total);
-  console.log(total);
+  pP[focus_variable].textContent = bored_cat + "/2";
 }
   if(total == 6 && age == 1){
     createCatCard();
@@ -117,9 +133,15 @@ play.addEventListener('click', function(){
   if(total == 6 && age == 0){
     document.getElementById("cat" + focus_variable).setAttribute('data-is-adult', 1);
     var color = document.getElementById("cat"+focus_variable).getAttribute("data-color");
-    console.log(color);
-    console.log(focus_variable);
     images[focus_variable].src = adultImgURL[color];
     alert("All grown up!");
+    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
+    pF[focus_variable].textContent = "0/2";
+    pG[focus_variable].textContent = "0/2";
+    pP[focus_variable].textContent = "0/2";
+
   }
 });
