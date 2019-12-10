@@ -1,24 +1,34 @@
+
+//Arrays used to stores kitten and adult images sets
 var kittenImgURL = ["images/black-kitten.jpg", "images/orange-kitten.jpg", "images/siamese-kitten.jpg", "images/white-kitten.jpg"];
 var adultImgURL = ["images/black-adult.jpg", "images/orange-adult.jpg", "images/siamese-adult.jpg", "images/white-adult.jpg"];
 
+
+//Used to track which cat is currently selected for groom,feed, play incrementation
 var focus_variable = 0;
+
+//Used to track number of cats and assign to cat# when a cat is made
 var cat_tracker = 0;
+
+//Arrays of cat cards, their images, their states, and their names
 var catCards = document.getElementsByClassName('cat-card');
 var images = document.getElementsByClassName('catImg');
 var pP = document.getElementsByClassName("play-stat-text");
 var pG = document.getElementsByClassName("groom-stat-text");
 var pF = document.getElementsByClassName("feed-stat-text");
 var catNames = document.getElementsByClassName("cat-name");
-console.log(catNames);
 
+//Start off first cat with grey background signifying that cat is selected
+catCards[focus_variable].style['background-color'] = "#ededf0";
 
-//Ancestor cat
+//Add listener to Ancestor cat
 catCards[0].addEventListener('click',function(event) {
     catCards[focus_variable].style['background-color'] = "white";
     event.currentTarget.style['background-color'] = "#ededf0";
     focus_variable = event.currentTarget.getAttribute("data-cat-num");
 });
 
+//Adds event listener which changes focus variable and background color of cat card to each cat card
 function addListToCats(){
   for(var i = 0; i < catCards.length; i++){
   catCards[i].addEventListener('click',function(event) {
@@ -29,6 +39,7 @@ function addListToCats(){
 }
 }
 
+//Opens modal and gets name for new catcard each time a cat card is created
 function nameKitten(){
   var mainModal = document.getElementById('main-modal');
   var modalBackdrop = document.getElementById('modal-backdrop');
@@ -38,7 +49,7 @@ function nameKitten(){
 /*loads modal on window load*/
 window.onload = nameKitten;
 
-
+//Assigns name or prompts user to enter name when a user selects "enter" on the name modal
 var enterButton = document.getElementById("modal-enter");
 enterButton.addEventListener('click', function () {
   var mainModal = document.getElementById('main-modal');
@@ -57,9 +68,10 @@ enterButton.addEventListener('click', function () {
   }
 });
 
+//Creates a new cat card using handlebars
 function createCatCard(){
   cat_tracker++;
-  var img_num = Math.floor(Math.random() * 4);
+  var img_num = Math.floor(Math.random() * 4); // Generates random number (0-3) in order to select a random cat img from array
   var name = nameKitten();
   var catHTML = Handlebars.templates.catCard({
     catID: "cat" + cat_tracker,
@@ -78,7 +90,7 @@ function createCatCard(){
   addListToCats();
 }
 
-
+//Following functions increment the feed, groom, and play stats of selected cats
 var feed = document.getElementById("Feed");
 feed.addEventListener('click',function(){
   var hungry_cat = document.getElementById("cat" + focus_variable).getAttribute("data-feed-stat");
@@ -174,4 +186,3 @@ play.addEventListener('click', function(){
 
   }
 });
-
