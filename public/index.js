@@ -104,9 +104,8 @@ feed.addEventListener('click',function(){
   pF[focus_variable].textContent = hungry_cat + "/2";
 }
   if(total == 6 && age == 1){
-    createCatCard();
-    alert("A new kitten was born!")
-
+      createCatCard();
+      alert("A new kitten was born!");
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', "1");
@@ -136,8 +135,8 @@ groom.addEventListener('click',function (){
   pG[focus_variable].textContent = dirty_cat + "/2";
 }
   if(total == 6 && age == 1){
-    createCatCard();
-    alert("A new kitten was born!")
+      createCatCard();
+      alert("A new kitten was born!");
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
@@ -167,9 +166,8 @@ play.addEventListener('click', function(){
   pP[focus_variable].textContent = bored_cat + "/2";
 }
   if(total == 6 && age == 1){
-    createCatCard();
-    alert("A new kitten was born!");
-
+      createCatCard();
+      alert("A new kitten was born!");
   }
   if(total == 6 && age == 0){
     document.getElementById("cat" + focus_variable).setAttribute('data-is-adult', 1);
