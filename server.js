@@ -23,10 +23,8 @@ app.get('/', function (req,res){
   res.status(200).render('catteryPage', {catData: catData});
 });
 
-
-
 app.get('*', function (req, res) {
-  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+  res.status(404).render('404');
 });
 
 app.listen(port, function () {
