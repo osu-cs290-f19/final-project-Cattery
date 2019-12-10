@@ -1,17 +1,13 @@
+
 a {
   text-decoration: none;
   color: #000;
 }
-
 header {
   background-color: #18bc9c;
   display: flex;
   align-items: center;
   position: relative;
-}
-
-body{
-  margin: 0;
 }
 
 .siteTitle {
@@ -49,23 +45,22 @@ body{
 .cat-card {
   display: inline-block;
   padding: 15px;
+  width: 500px;
   border: 2px solid #cccccc;
   border-radius: 15px;
-  margin: 20px;
-  vertical-align: top;
+  margin: 10px;
 }
 
 .cat-image-holder img {
-  height: 300px;
-  width: 450px;
+  max-height: 300px;
   border-radius: 10px;
+  height: 100%;
 }
 
 .cat-name{
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
 }
-
 .cat-stats-holder {
   font: 20px;
   display: flex;
@@ -145,11 +140,6 @@ body{
 .error-container {
   font-family: 'Amatic SC', serif;
   text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
 }
 
 .error-container h2 {
