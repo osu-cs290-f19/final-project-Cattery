@@ -25,13 +25,6 @@ var catNames = document.getElementsByClassName("cat-name");
 //Start off first cat with grey background signifying that cat is selected
 catCards[focus_variable].style['background-color'] = "#ededf0";
 
-//Add listener to Ancestor cat
-catCards[0].addEventListener('click',function(event) {
-    catCards[focus_variable].style['background-color'] = "white";
-    event.currentTarget.style['background-color'] = "#ededf0";
-    focus_variable = event.currentTarget.getAttribute("data-cat-num");
-});
-
 //Adds event listener which changes focus variable and background color of cat card to each cat card
 function addListToCats(){
   for(var i = 0; i < catCards.length; i++){
@@ -51,7 +44,7 @@ function nameKitten(){
   modalBackdrop.classList.remove('hidden');
 }
 /*loads modal on window load*/
-window.onload = nameKitten;
+window.onload = nameKitten, addListToCats;
 
 //Assigns name or prompts user to enter name when a user selects "enter" on the name modal
 var enterButton = document.getElementById("modal-enter");
@@ -72,7 +65,7 @@ enterButton.addEventListener('click', function () {
   }
 });
 
-//detect a button click on enter or return 
+//detect a button click on enter or return
 var input = document.getElementById('text-input');
 input.addEventListener("keyup", function (event){
   if( event.keyCode === 13){
