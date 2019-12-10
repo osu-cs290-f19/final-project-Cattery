@@ -95,6 +95,13 @@ feed.addEventListener('click',function(){
     createCatCard();
     alert("A new kitten was born!")
 
+    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
+    pF[focus_variable].textContent = "0/2";
+    pG[focus_variable].textContent = "0/2";
+    pP[focus_variable].textContent = "0/2";
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', "1");
@@ -126,6 +133,14 @@ groom.addEventListener('click',function (){
   if(total == 6 && age == 1){
     createCatCard();
     alert("A new kitten was born!")
+
+    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
+    pF[focus_variable].textContent = "0/2";
+    pG[focus_variable].textContent = "0/2";
+    pP[focus_variable].textContent = "0/2";
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
@@ -158,6 +173,13 @@ play.addEventListener('click', function(){
     createCatCard();
     alert("A new kitten was born!");
 
+    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
+    pF[focus_variable].textContent = "0/2";
+    pG[focus_variable].textContent = "0/2";
+    pP[focus_variable].textContent = "0/2";
   }
   if(total == 6 && age == 0){
     document.getElementById("cat" + focus_variable).setAttribute('data-is-adult', 1);
@@ -173,5 +195,7 @@ play.addEventListener('click', function(){
     pP[focus_variable].textContent = "0/2";
 
   }
+
+
 });
 

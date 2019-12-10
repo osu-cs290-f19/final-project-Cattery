@@ -45,6 +45,7 @@ header {
 .cat-card {
   display: inline-block;
   padding: 15px;
+  width: 500px;
   border: 2px solid #cccccc;
   border-radius: 15px;
   margin: 10px;
@@ -52,7 +53,8 @@ header {
 
 .cat-image-holder img {
   max-height: 300px;
-  border-radius: 10px
+  border-radius: 10px;
+  height: 100%;
 }
 
 .cat-name{
