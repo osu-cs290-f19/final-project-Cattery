@@ -78,6 +78,15 @@ function createCatCard(){
   addListToCats();
 }
 
+function resetPoints(){
+    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
+    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
+    pF[focus_variable].textContent = "0/2";
+    pG[focus_variable].textContent = "0/2";
+    pP[focus_variable].textContent = "0/2";
+}
 
 var feed = document.getElementById("Feed");
 feed.addEventListener('click',function(){
@@ -95,27 +104,16 @@ feed.addEventListener('click',function(){
     createCatCard();
     alert("A new kitten was born!")
 
-    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
-    pF[focus_variable].textContent = "0/2";
-    pG[focus_variable].textContent = "0/2";
-    pP[focus_variable].textContent = "0/2";
+    resetPoints();
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', "1");
     var color = document.getElementById("cat" + focus_variable).getAttribute("data-color");
     images[focus_variable].src = adultImgURL[color];
     alert("All grown up!");
-    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
-    pF[focus_variable].textContent = "0/2";
-    pG[focus_variable].textContent = "0/2";
-    pP[focus_variable].textContent = "0/2";
+    resetPoints();
   }
+
 });
 
 var groom = document.getElementById("Groom");
@@ -133,28 +131,16 @@ groom.addEventListener('click',function (){
   if(total == 6 && age == 1){
     createCatCard();
     alert("A new kitten was born!")
-
-    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
-    pF[focus_variable].textContent = "0/2";
-    pG[focus_variable].textContent = "0/2";
-    pP[focus_variable].textContent = "0/2";
+    resetPoints();
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
     var color = document.getElementById("cat"+focus_variable).getAttribute("data-color");
     images[focus_variable].src = adultImgURL[color];
     alert("All grown up!");
-    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
-    pF[focus_variable].textContent = "0/2";
-    pG[focus_variable].textContent = "0/2";
-    pP[focus_variable].textContent = "0/2";
+    resetPoints();
   }
+
 });
 
 var play = document.getElementById("Play");
@@ -172,30 +158,15 @@ play.addEventListener('click', function(){
   if(total == 6 && age == 1){
     createCatCard();
     alert("A new kitten was born!");
-
-    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
-    pF[focus_variable].textContent = "0/2";
-    pG[focus_variable].textContent = "0/2";
-    pP[focus_variable].textContent = "0/2";
+    resetPoints();
   }
   if(total == 6 && age == 0){
     document.getElementById("cat" + focus_variable).setAttribute('data-is-adult', 1);
     var color = document.getElementById("cat"+focus_variable).getAttribute("data-color");
     images[focus_variable].src = adultImgURL[color];
     alert("All grown up!");
-    document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', 0);
-    document.getElementById("cat"+focus_variable).setAttribute('data-total', 0);
-    pF[focus_variable].textContent = "0/2";
-    pG[focus_variable].textContent = "0/2";
-    pP[focus_variable].textContent = "0/2";
-
+    resetPoints();
   }
-
 
 });
 
