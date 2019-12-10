@@ -10,6 +10,9 @@ header {
   position: relative;
 }
 
+body{
+  margin: 0;
+}
 .siteTitle {
   font-family: 'Amatic SC', cursive;
   font-size: 120px;

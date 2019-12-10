@@ -71,6 +71,28 @@ enterButton.addEventListener('click', function () {
 
   }
 });
+
+//detect a button click on enter or return 
+var input = document.getElementById('text-input');
+input.addEventListener("keyup", function (event){
+  if( event.keyCode === 13){
+    var mainModal = document.getElementById('main-modal');
+    var modalBackdrop = document.getElementById('modal-backdrop');
+    var name = document.getElementById("text-input").value.trim();
+    if (!name) {
+      alert("Don't be heartless, give you kitty a name!");
+    }
+    else {
+      console.log("name is", name);
+          mainModal.classList = 'hidden';
+          modalBackdrop.classList = 'hidden';
+          catNames[cat_tracker].textContent = name;
+          document.getElementById("text-input").value = "";
+    }
+  }
+});
+
+//Reset the stat back to 0
 function statReset(){
   document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', 0);
   document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat', 0);
@@ -80,6 +102,7 @@ function statReset(){
   pG[focus_variable].textContent = "0/2";
   pP[focus_variable].textContent = "0/2";
 }
+
 //Creates a new cat card using handlebars
 function createCatCard(){
   cat_tracker++;
@@ -118,7 +141,8 @@ function createCatCard(){
   console.log("postSent");
 }
 
-//Following functions increment the feed, groom, and play stats of selected cats
+//Following functions increment the feed, groom, and play stats of selected cats, check if
+//they have reach adult or have reach the maximum number of kitten
 var feed = document.getElementById("Feed");
 feed.addEventListener('click',function(){
   var hungry_cat = document.getElementById("cat" + focus_variable).getAttribute("data-feed-stat");
