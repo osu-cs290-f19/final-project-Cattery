@@ -96,6 +96,7 @@ feed.addEventListener('click',function(){
   var hungry_cat = document.getElementById("cat" + focus_variable).getAttribute("data-feed-stat");
   var total = document.getElementById("cat" + focus_variable).getAttribute("data-total");
   var age = document.getElementById("cat" + focus_variable).getAttribute("data-is-adult");
+  var kids = document.getElementById("cat" + focus_variable).getAttribute("data-kids");
   if(hungry_cat < 2){
   hungry_cat++;
   document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', hungry_cat);
@@ -104,8 +105,13 @@ feed.addEventListener('click',function(){
   pF[focus_variable].textContent = hungry_cat + "/2";
 }
   if(total == 6 && age == 1){
+    if(kids == 0){
+      kids++;
+      document.getElementById("cat" + focus_variable).setAttribute('data-kids', kids);
+      console.log(kids);
       createCatCard();
       alert("A new kitten was born!");
+    }
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', "1");
@@ -127,6 +133,7 @@ groom.addEventListener('click',function (){
   var dirty_cat = document.getElementById("cat"+focus_variable).getAttribute("data-groom-stat");
   var total = document.getElementById("cat"+focus_variable).getAttribute("data-total");
   var age = document.getElementById("cat"+focus_variable).getAttribute("data-is-adult");
+  var kids = document.getElementById("cat"+focus_variable).getAttribute("data-kids");
   if(dirty_cat < 2){
   dirty_cat++;
   document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat',dirty_cat)
@@ -135,8 +142,12 @@ groom.addEventListener('click',function (){
   pG[focus_variable].textContent = dirty_cat + "/2";
 }
   if(total == 6 && age == 1){
+    if(kids == 0){
+      kids++;
+      document.getElementById("cat" + focus_variable).setAttribute('data-kids', kids);
       createCatCard();
       alert("A new kitten was born!");
+    }
   }
   if(total == 6 && age == 0){
     document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
@@ -158,6 +169,7 @@ play.addEventListener('click', function(){
   var bored_cat = document.getElementById("cat"+focus_variable).getAttribute("data-play-stat");
   var total = document.getElementById("cat"+focus_variable).getAttribute("data-total");
   var age = document.getElementById("cat"+focus_variable).getAttribute("data-is-adult");
+  var kids = document.getElementById("cat"+focus_variable).getAttribute("data-kids");
   if(bored_cat < 2){
   bored_cat++;
   document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', bored_cat)
@@ -166,8 +178,12 @@ play.addEventListener('click', function(){
   pP[focus_variable].textContent = bored_cat + "/2";
 }
   if(total == 6 && age == 1){
+    if(kids == 0){
+      kids++;
+      document.getElementById("cat" + focus_variable).setAttribute('data-kids', kids);
       createCatCard();
       alert("A new kitten was born!");
+    }
   }
   if(total == 6 && age == 0){
     document.getElementById("cat" + focus_variable).setAttribute('data-is-adult', 1);
