@@ -145,6 +145,11 @@ body{
 .error-container {
   font-family: 'Amatic SC', serif;
   text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
 }
 
 .error-container h2 {
