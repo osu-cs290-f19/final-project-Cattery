@@ -174,3 +174,32 @@ play.addEventListener('click', function(){
 
   }
 });
+
+function modalEnterClick () {
+    if (!modalText.value.trim()) {
+    alert("You must give your kitten a name!");
+    }
+    else {
+
+        hideModal();
+}
+
+/*unhides modal to name new kitten*/
+function nameKitten() {
+    nameModal.classList = 'visible';
+    modalBackdrop.classList = 'visible';
+}
+
+/*hide modal and name kitten*/
+function hideModal() {
+    modalText.value = "";
+
+    nameModal.classList = 'hidden';
+    modalBackdrop.classList = 'hidden';
+}
+
+/*loads modal on window load*/
+window.onload = nameKitten;
+window.addEventListener('DOMContentLoaded', nameKitten());
+
+btnEnter.addEventListener('click', modalEnterClick);
