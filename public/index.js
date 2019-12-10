@@ -1,3 +1,7 @@
+var postRequest = new XMLHttpRequest();
+var requestURL = "/";
+
+
 
 //Arrays used to stores kitten and adult images sets
 var kittenImgURL = ["images/black-kitten.jpg", "images/orange-kitten.jpg", "images/siamese-kitten.jpg", "images/white-kitten.jpg"];
@@ -85,9 +89,25 @@ function createCatCard(){
     playStat: 0,
     total: 0
   });
+  postRequest.open('POST',requestURL);
+  var requestBody = JSON.stringify({
+    catID: "cat" + cat_tracker,
+    catNUM: cat_tracker,
+    catName: name,
+    age: 0,
+    photoURL: kittenImgURL[img_num],
+    color: img_num,
+    feedStat: 0,
+    groomStat: 0,
+    playStat: 0,
+    total: 0
+   });
+   postRequest.setRequestHeader('Content-Type', 'application/json');
   var cats = document.getElementById('cats');
   cats.insertAdjacentHTML('beforeend',catHTML);
   addListToCats();
+  postRequest.send(requestBody);
+  console.log("postSent");
 }
 
 //Following functions increment the feed, groom, and play stats of selected cats
