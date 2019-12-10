@@ -1,13 +1,17 @@
-
 a {
   text-decoration: none;
   color: #000;
 }
+
 header {
   background-color: #18bc9c;
   display: flex;
   align-items: center;
   position: relative;
+}
+
+body{
+  margin: 0;
 }
 
 .siteTitle {
@@ -47,18 +51,21 @@ header {
   padding: 15px;
   border: 2px solid #cccccc;
   border-radius: 15px;
-  margin: 10px;
+  margin: 20px;
+  vertical-align: top;
 }
 
 .cat-image-holder img {
-  max-height: 300px;
-  border-radius: 10px
+  height: 300px;
+  width: 450px;
+  border-radius: 10px;
 }
 
 .cat-name{
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
 }
+
 .cat-stats-holder {
   font: 20px;
   display: flex;
