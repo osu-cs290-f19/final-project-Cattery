@@ -6,7 +6,7 @@ var requestURL = "/";
 //Arrays used to stores kitten and adult images sets
 var kittenImgURL = ["images/black-kitten.jpg", "images/orange-kitten.jpg", "images/siamese-kitten.jpg", "images/white-kitten.jpg"];
 var adultImgURL = ["images/black-adult.jpg", "images/orange-adult.jpg", "images/siamese-adult.jpg", "images/white-adult.jpg"];
-
+var img_num;
 
 //Used to track which cat is currently selected for groom,feed, play incrementation
 var focus_variable = 0;
@@ -21,9 +21,6 @@ var pP = document.getElementsByClassName("play-stat-text");
 var pG = document.getElementsByClassName("groom-stat-text");
 var pF = document.getElementsByClassName("feed-stat-text");
 var catNames = document.getElementsByClassName("cat-name");
-
-//Start off first cat with grey background signifying that cat is selected
-catCards[focus_variable].style['background-color'] = "#ededf0";
 
 //Adds event listener which changes focus variable and background color of cat card to each cat card
 function addListToCats(){
@@ -45,11 +42,13 @@ function nameKitten(){
 
 }
 /*loads modal on window load*/
-window.onload = nameKitten, addListToCats;
+window.onload = createCatCard();
 
 //Assigns name or prompts user to enter name when a user selects "enter" on the name modal
 var enterButton = document.getElementById("modal-enter");
-enterButton.addEventListener('click', function () {
+enterButton.addEventListener('click', function () {getCatName()});
+
+function getCatName(){
   var mainModal = document.getElementById('main-modal');
   var modalBackdrop = document.getElementById('modal-backdrop');
   var name = document.getElementById("text-input").value.trim();
@@ -57,14 +56,32 @@ enterButton.addEventListener('click', function () {
     alert("Don't be heartless, give you kitty a name!");
   }
   else {
+    postRequest.open('POST',requestURL);
+    //Send post request with new cat data
+    var requestBody = JSON.stringify({
+      catName: name,
+      catID: "cat" + cat_tracker,
+      catNUM: cat_tracker,
+      age: 0,
+      photoURL: kittenImgURL[img_num],
+      color: img_num,
+      feedStat: 0,
+      groomStat: 0,
+      playStat: 0,
+      total: 0
+    });
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+    postRequest.send(requestBody);
+    console.log("postSent");
+
     console.log("name is", name);
         mainModal.classList = 'hidden';
         modalBackdrop.classList = 'hidden';
         catNames[cat_tracker].textContent = name;
+        cat_tracker++;
         document.getElementById("text-input").value = "";
-
   }
-});
+}
 
 //detect a button click on enter or return
 var input = document.getElementById('text-input');
@@ -78,9 +95,27 @@ input.addEventListener("keyup", function (event){
     }
     else {
       console.log("name is", name);
+      postRequest.open('POST',requestURL);
+      //Send post request with new cat data
+      var requestBody = JSON.stringify({
+        catName: name,
+        catID: "cat" + cat_tracker,
+        catNUM: cat_tracker,
+        age: 0,
+        photoURL: kittenImgURL[img_num],
+        color: img_num,
+        feedStat: 0,
+        groomStat: 0,
+        playStat: 0,
+        total: 0
+      });
+      postRequest.setRequestHeader('Content-Type', 'application/json');
+      postRequest.send(requestBody);
+      console.log("postSent");
           mainModal.classList = 'hidden';
           modalBackdrop.classList = 'hidden';
           catNames[cat_tracker].textContent = name;
+          cat_tracker++;
           document.getElementById("text-input").value = "";
     }
   }
@@ -99,8 +134,7 @@ function statReset(){
 
 //Creates a new cat card using handlebars
 function createCatCard(){
-  cat_tracker++;
-  var img_num = Math.floor(Math.random() * 4); // Generates random number (0-3) in order to select a random cat img from array
+  img_num = Math.floor(Math.random() * 4); // Generates random number (0-3) in order to select a random cat img from array
   var catHTML = Handlebars.templates.catCard({
     catID: "cat" + cat_tracker,
     catNUM: cat_tracker,
@@ -116,21 +150,6 @@ function createCatCard(){
   cats.insertAdjacentHTML('beforeend',catHTML);
   addListToCats();
   nameKitten();
-  postRequest.open('POST',requestURL);
-  var requestBody = JSON.stringify({
-    catID: "cat" + cat_tracker,
-    catNUM: cat_tracker,
-    age: 0,
-    photoURL: kittenImgURL[img_num],
-    color: img_num,
-    feedStat: 0,
-    groomStat: 0,
-    playStat: 0,
-    total: 0
-   });
-  postRequest.setRequestHeader('Content-Type', 'application/json');
-  postRequest.send(requestBody);
-  console.log("postSent");
 }
 
 //The followingincrement the feed, groom, and play stats of selected cats, check if
