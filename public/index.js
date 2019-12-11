@@ -59,7 +59,7 @@ enterButton.addEventListener('click', function () {
     alert("Don't be heartless, give you kitty a name!");
   }
   else {
-    console.log("name is", name);
+    console.log("name is", cat_tracker);
         mainModal.classList = 'hidden';
         modalBackdrop.classList = 'hidden';
         catNames[cat_tracker].textContent = name;
@@ -73,7 +73,12 @@ function createCatCard(){
   cat_tracker++;
   var img_num = Math.floor(Math.random() * 4); // Generates random number (0-3) in order to select a random cat img from array
   var name = nameKitten();
-  var catHTML = Handlebars.templates.catCard({
+
+  var postRequest = new XMLHttpRequest();
+  var requestURL = '/newCat';
+  postRequest.open('POST', requestURL);
+
+  var requestBody = JSON.stringify({
     catID: "cat" + cat_tracker,
     catNUM: cat_tracker,
     catName: name,
@@ -85,8 +90,30 @@ function createCatCard(){
     playStat: 0,
     total: 0
   });
-  var cats = document.getElementById('cats');
-  cats.insertAdjacentHTML('beforeend',catHTML);
+
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+  postRequest.addEventListener('load', function (event) {
+    if (event.target.status !== 200) {
+      var responseBody = event.target.response;
+    } else {
+      var catHTML = Handlebars.templates.catCard({
+        catID: "cat" + cat_tracker,
+        catNUM: cat_tracker,
+        catName: name,
+        age: 0,
+        photoURL: kittenImgURL[img_num],
+        color: img_num,
+        feedStat: 0,
+        groomStat: 0,
+        playStat: 0,
+        total: 0
+      });
+      var cats = document.getElementById('cats');
+      cats.insertAdjacentHTML('beforeend',catHTML);
+    }
+  })
+
   addListToCats();
 }
 
