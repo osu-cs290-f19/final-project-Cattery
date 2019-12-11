@@ -104,7 +104,6 @@ function createCatCard(){
   var catHTML = Handlebars.templates.catCard({
     catID: "cat" + cat_tracker,
     catNUM: cat_tracker,
-    catName: name,
     age: 0,
     photoURL: kittenImgURL[img_num],
     color: img_num,
@@ -117,7 +116,6 @@ function createCatCard(){
   var requestBody = JSON.stringify({
     catID: "cat" + cat_tracker,
     catNUM: cat_tracker,
-    catName: name,
     age: 0,
     photoURL: kittenImgURL[img_num],
     color: img_num,
