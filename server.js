@@ -17,8 +17,6 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('catData.json');
 const db = low(adapter);
 
-
-
 app.use(bodyParser.json());
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -36,7 +34,6 @@ app.post('/', function(req, res){
   console.log("writing");
   db.get('cats')
    .push({
-      catName: req.body.catName,
       catID: req.body.catID,
       catNUM: req.body.catNUM,
       color: req.body.color,
