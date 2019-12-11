@@ -42,6 +42,7 @@ function nameKitten(){
   var modalBackdrop = document.getElementById('modal-backdrop');
   mainModal.classList.remove('hidden');
   modalBackdrop.classList.remove('hidden');
+
 }
 /*loads modal on window load*/
 window.onload = nameKitten, addListToCats;
@@ -100,7 +101,6 @@ function statReset(){
 function createCatCard(){
   cat_tracker++;
   var img_num = Math.floor(Math.random() * 4); // Generates random number (0-3) in order to select a random cat img from array
-  var name = nameKitten();
   var catHTML = Handlebars.templates.catCard({
     catID: "cat" + cat_tracker,
     catNUM: cat_tracker,
@@ -112,6 +112,10 @@ function createCatCard(){
     playStat: 0,
     total: 0
   });
+  var cats = document.getElementById('cats');
+  cats.insertAdjacentHTML('beforeend',catHTML);
+  addListToCats();
+  nameKitten();
   postRequest.open('POST',requestURL);
   var requestBody = JSON.stringify({
     catID: "cat" + cat_tracker,
@@ -124,101 +128,34 @@ function createCatCard(){
     playStat: 0,
     total: 0
    });
-   postRequest.setRequestHeader('Content-Type', 'application/json');
-  var cats = document.getElementById('cats');
-  cats.insertAdjacentHTML('beforeend',catHTML);
-  addListToCats();
+  postRequest.setRequestHeader('Content-Type', 'application/json');
   postRequest.send(requestBody);
   console.log("postSent");
 }
 
-//Following functions increment the feed, groom, and play stats of selected cats, check if
+//The followingincrement the feed, groom, and play stats of selected cats, check if
 //they have reach adult or have reach the maximum number of kitten
 var feed = document.getElementById("Feed");
-feed.addEventListener('click',function(){
-  var hungry_cat = document.getElementById("cat" + focus_variable).getAttribute("data-feed-stat");
-  var total = document.getElementById("cat" + focus_variable).getAttribute("data-total");
-  var age = document.getElementById("cat" + focus_variable).getAttribute("data-is-adult");
-  var kids = document.getElementById("cat" + focus_variable).getAttribute("data-kids");
-  if(hungry_cat < 2){
-  hungry_cat++;
-  document.getElementById("cat"+focus_variable).setAttribute('data-feed-stat', hungry_cat);
-  total++;
-  document.getElementById("cat"+focus_variable).setAttribute('data-total', total);
-  pF[focus_variable].textContent = hungry_cat + "/2";
-}
-if(kids == 3){
-  alert("Cat " + catNames[focus_variable].textContent + " is now too old to have more kitten!");
-}
-  if(total == 6 && age == 1){
-    if(kids < 3){
-      kids++;
-      if(kids < 3){
-        statReset();
-      }
-      document.getElementById("cat" + focus_variable).setAttribute('data-kids', kids);
-      createCatCard();
-      alert("A new kitten was born!");
-    }
-  }
-  if(total == 6 && age == 0){
-    document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', "1");
-    var color = document.getElementById("cat" + focus_variable).getAttribute("data-color");
-    images[focus_variable].src = adultImgURL[color];
-    alert("All grown up!");
-    statReset();
-  }
-});
+feed.addEventListener('click',  function(){ stat("data-feed-stat", pF) });
 
 var groom = document.getElementById("Groom");
-groom.addEventListener('click',function (){
-  var dirty_cat = document.getElementById("cat"+focus_variable).getAttribute("data-groom-stat");
-  var total = document.getElementById("cat"+focus_variable).getAttribute("data-total");
-  var age = document.getElementById("cat"+focus_variable).getAttribute("data-is-adult");
-  var kids = document.getElementById("cat"+focus_variable).getAttribute("data-kids");
-  if(dirty_cat < 2){
-  dirty_cat++;
-  document.getElementById("cat"+focus_variable).setAttribute('data-groom-stat',dirty_cat)
-  total++;
-  document.getElementById("cat"+focus_variable).setAttribute('data-total', total)
-  pG[focus_variable].textContent = dirty_cat + "/2";
-}
-if(kids == 3){
-  alert("Cat " + catNames[focus_variable].textContent + " is now too old to have more kitten!");
-}
-  if(total == 6 && age == 1){
-    if(kids < 3){
-      kids++;
-      if(kids < 3){
-        statReset();
-      }
-      document.getElementById("cat" + focus_variable).setAttribute('data-kids', kids);
-      createCatCard();
-      alert("A new kitten was born!");
-    }
-  }
-
-  if(total == 6 && age == 0){
-    document.getElementById("cat"+focus_variable).setAttribute('data-is-adult', 1);
-    var color = document.getElementById("cat"+focus_variable).getAttribute("data-color");
-    images[focus_variable].src = adultImgURL[color];
-    alert("All grown up!");
-    statReset();
-  }
-});
+groom.addEventListener('click',  function(){ stat("data-groom-stat", pG) });
 
 var play = document.getElementById("Play");
-play.addEventListener('click', function(){
-  var bored_cat = document.getElementById("cat"+focus_variable).getAttribute("data-play-stat");
+play.addEventListener('click',  function(){ stat("data-play-stat", pP) });
+
+
+function stat(att,attArray){
+  var bored_cat = document.getElementById("cat"+focus_variable).getAttribute(att);
   var total = document.getElementById("cat"+focus_variable).getAttribute("data-total");
   var age = document.getElementById("cat"+focus_variable).getAttribute("data-is-adult");
   var kids = document.getElementById("cat"+focus_variable).getAttribute("data-kids");
   if(bored_cat < 2){
   bored_cat++;
-  document.getElementById("cat"+focus_variable).setAttribute('data-play-stat', bored_cat)
+  document.getElementById("cat"+focus_variable).setAttribute(att, bored_cat)
   total++;
   document.getElementById("cat"+focus_variable).setAttribute('data-total',total);
-  pP[focus_variable].textContent = bored_cat + "/2";
+  attArray[focus_variable].textContent = bored_cat + "/2";
 }
 if(kids == 3){
   alert("Cat " + catNames[focus_variable].textContent + " is now too old to have more kitten!");
@@ -242,4 +179,4 @@ if(kids == 3){
     statReset();
 
   }
-});
+}
