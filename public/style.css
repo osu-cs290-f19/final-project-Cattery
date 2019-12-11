@@ -10,6 +10,9 @@ header {
   position: relative;
 }
 
+body{
+  margin: 0;
+}
 .siteTitle {
   font-family: 'Amatic SC', cursive;
   font-size: 120px;
@@ -48,13 +51,23 @@ header {
   width: 500px;
   border: 2px solid #cccccc;
   border-radius: 15px;
-  margin: 10px;
 }
 
+.cat-image-holder{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+
+}
 .cat-image-holder img {
   max-height: 300px;
   border-radius: 10px;
   height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cat-name{

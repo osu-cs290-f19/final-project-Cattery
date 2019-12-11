@@ -17,8 +17,6 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('catData.json');
 const db = low(adapter);
 
-
-
 app.use(bodyParser.json());
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
