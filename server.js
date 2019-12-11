@@ -34,6 +34,7 @@ app.post('/', function(req, res){
   console.log("writing");
   db.get('cats')
    .push({
+      catName: req.body.catName,
       catID: req.body.catID,
       catNUM: req.body.catNUM,
       color: req.body.color,
